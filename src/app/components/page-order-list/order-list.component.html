@@ -1,7 +1,24 @@
 <div class="container">
-    <ul>
-        <li *ngFor="let item of items">
-            {{item.Flavor}}
-        </li>
-    </ul>
+    <div class="order-card" *ngFor="let item of items">
+        <mat-card (click)="onCardClick(item.Order_ID)">
+            <mat-card-title> {{ 'Order Id: ' + item.Order_ID }} </mat-card-title>
+            <mat-card-content>
+                <div class="order-field">
+                    <span class="order-field-label"> Crust: </span> {{ item.Crust }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Flavor: </span> {{ item.Flavor }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Size: </span> {{ item.Size }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Table No: </span> {{ item.Table_No }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Timestamp: </span> {{ item.Timestamp | date: 'medium' }}
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>

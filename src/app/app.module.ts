@@ -9,6 +9,8 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { OrderService } from './services/order.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { SharedService } from './services/shared.service';
 
 export function getToken() {
   console.log("Inside getToken...");
@@ -32,7 +34,7 @@ export function getToken() {
     }),
     SharedComponentsModule
   ],
-  providers: [AuthService, OrderService],
+  providers: [AuthGuardService, AuthService, OrderService, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

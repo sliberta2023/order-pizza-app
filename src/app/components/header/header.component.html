@@ -1,3 +1,9 @@
 <div class="container">
-    
+    <button
+        *ngIf="isLogoutButtonVisible$ | async"
+        mat-raised-button
+        color="primary"
+        (click)="onClick()">
+            Logout
+    </button>
 </div>

@@ -6,7 +6,11 @@
 }
 
 .header {
-    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    border-bottom: 1px solid gainsboro;
 }
 
 .main {

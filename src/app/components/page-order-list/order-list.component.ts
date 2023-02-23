@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { catchError, of, Subject, takeUntil } from 'rxjs';
 import { OrderAPIResponse } from 'src/app/interfaces/order';
 import { OrderService } from 'src/app/services/order.service';
@@ -14,7 +15,10 @@ export class PageOrderList implements OnInit {
   hasError = false;
   private ngUnsubscribe = new Subject();
   
-  constructor(private readonly orderService: OrderService) { }
+  constructor(
+    private readonly orderService: OrderService,
+    private readonly router: Router
+    ) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -33,4 +37,8 @@ export class PageOrderList implements OnInit {
     });
   }
 
+  onCardClick(orderId: number): void {
+    const url = `details/${orderId}`
+    this.router.navigate([url]);
+  }
 }

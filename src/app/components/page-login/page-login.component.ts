@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { catchError, map, of, Subject, takeUntil } from 'rxjs';
+import { SharedService } from 'src/app/services/shared.service';
 import { AuthToken } from '../../interfaces/token';
 import { AuthService } from '../../services/auth.service';
 
@@ -18,7 +20,11 @@ export class PageLogin implements OnInit, OnDestroy {
 
   private ngUnsubscribe = new Subject();
 
-  constructor(private readonly authService: AuthService) { }
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router,
+    private readonly sharedService: SharedService
+  ) { }
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -46,6 +52,8 @@ export class PageLogin implements OnInit, OnDestroy {
       this.isChecking = false;
       if (!this.hasError) {
         this.saveToken(res.accessToken);
+        this.router.navigate(['list']);
+        this.sharedService.setLogoutButtonVisibility(true);
       }
     });
   }

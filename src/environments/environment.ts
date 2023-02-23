@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_GATEWAY: 'https://pizza-api-app.herokuapp.com/api'
+  API: 'https://pizza-api-app.herokuapp.com/api'
 };
 
 /*

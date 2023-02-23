@@ -1,1 +1,39 @@
-<p>page-login works!</p>
+<div class="container">
+    <form class="form-login" [formGroup]="formGroup">
+        <h4> Login Page </h4>
+        <mat-error *ngIf="hasError">
+            Please enter the correct username and password.
+        </mat-error>
+        <mat-card>
+            <mat-card-content>
+                <div class="form-fields">
+
+                    <mat-form-field class="form-field-username" appearance="fill">
+                      <mat-label>Username: </mat-label>
+                      <input type="text" matInput placeholder="username" [formControl]="inputControlUsername">
+                    </mat-form-field>
+                  
+                    <mat-form-field class="form-field-password" appearance="fill">
+                      <mat-label>Password: </mat-label>
+                      <input type="password" matInput controlName="password" [formControl]="inputControlPassword">
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <div class="actions">
+            <button
+                *ngIf="!isChecking"
+                class="button-login"
+                mat-button
+                color="primary"
+                (click)="onLogin()">
+                LOGIN
+            </button>
+
+            <mat-spinner *ngIf="isChecking"></mat-spinner>
+
+        </div>
+
+      </form>
+</div>

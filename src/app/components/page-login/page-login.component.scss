@@ -1,0 +1,34 @@
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 2rem;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    justify-content: space-between;
+}
+
+.form-field-username, .form-field-password {
+    margin: 1rem 0;
+}
+
+.button-login {
+    height: 4rem;
+    width: 16rem;
+    margin-top: 2rem;
+}
+
+.mat-card {
+    margin-top: 1rem;
+    min-width: 40%;
+}

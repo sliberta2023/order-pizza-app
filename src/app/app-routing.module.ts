@@ -28,7 +28,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: 'details/:id',
+    path: 'details/:orderId',
     component: PageOrderDetails,
     canActivate: [AuthGuardService]
   },

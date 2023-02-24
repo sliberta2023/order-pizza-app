@@ -26,5 +26,10 @@
                     Delete
                 </button>
         </mat-card-actions>
+        <mat-card-footer>
+            <mat-error *ngIf="hasError">
+                Unable to cancel this order.
+            </mat-error>
+        </mat-card-footer>
     </mat-card>
 </div>

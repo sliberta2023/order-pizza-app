@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, catchError, of, Subject, takeUntil } from 'rxjs';
 import { OrderUI } from 'src/app/interfaces/order';
 import { OrderService } from 'src/app/services/order.service';
@@ -18,8 +18,9 @@ export class PageOrderDetails implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
 
   constructor(
-    private readonly route: ActivatedRoute,
     private readonly orderService: OrderService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
     private readonly sharedService: SharedService
   ) { }
 
@@ -51,6 +52,7 @@ export class PageOrderDetails implements OnInit, OnDestroy {
       })
     ).subscribe(() => {
       this.isLoading = false;
+      this.router.navigate(['list']);
     });
   }
 

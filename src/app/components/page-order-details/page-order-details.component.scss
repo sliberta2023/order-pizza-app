@@ -1,3 +1,15 @@
 .container {
     margin: 1rem 2rem;
+    width: 50%;
+}
+
+.order-field {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.order-field-label {
+    font-weight: bold;
+    padding-right: 1rem;
 }

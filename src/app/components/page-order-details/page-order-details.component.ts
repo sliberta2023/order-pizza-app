@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, catchError, of, Subject, takeUntil } from 'rxjs';
+import { catchError, of, Subject, takeUntil } from 'rxjs';
 import { OrderUI } from 'src/app/interfaces/order';
 import { OrderService } from 'src/app/services/order.service';
 import { SharedService } from 'src/app/services/shared.service';

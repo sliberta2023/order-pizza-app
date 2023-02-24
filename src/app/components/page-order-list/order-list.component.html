@@ -1,24 +1,46 @@
 <div class="container">
-    <div class="order-card" *ngFor="let item of items">
-        <mat-card (click)="onCardClick(item.Order_ID)">
-            <mat-card-title> {{ 'Order Id: ' + item.Order_ID }} </mat-card-title>
-            <mat-card-content>
-                <div class="order-field">
-                    <span class="order-field-label"> Crust: </span> {{ item.Crust }}
-                </div>
-                <div class="order-field">
-                    <span class="order-field-label"> Flavor: </span> {{ item.Flavor }}
-                </div>
-                <div class="order-field">
-                    <span class="order-field-label"> Size: </span> {{ item.Size }}
-                </div>
-                <div class="order-field">
-                    <span class="order-field-label"> Table No: </span> {{ item.Table_No }}
-                </div>
-                <div class="order-field">
-                    <span class="order-field-label"> Timestamp: </span> {{ item.Timestamp | date: 'medium' }}
-                </div>
-            </mat-card-content>
-        </mat-card>
+    <div class="order-list-header">
+        <div class="order-list-header-actions">
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="onCreateOrder()">
+                Create Order
+            </button>
+            <mat-form-field class="form-field" appearance="fill">
+                <mat-icon matPrefix class="search-icon">search</mat-icon>
+                <input
+                    matInput
+                    type="search"
+                    placeholder="search here"
+                    [formControl]="formControlSearch"
+                    class="search-input" >
+            </mat-form-field>  
+        </div>
+    </div>
+
+    <div class="order-list-content">
+        <div class="order-card" *ngFor="let item of filteredItems">
+            <mat-card (click)="onCardClick(item.orderId)">
+                <mat-card-title> {{ 'Order Id: ' + item.orderId }} </mat-card-title>
+                <mat-card-content>
+                    <div class="order-field">
+                        <span class="order-field-label"> Crust: </span> {{ item.crust }}
+                    </div>
+                    <div class="order-field">
+                        <span class="order-field-label"> Flavor: </span> {{ item.flavor }}
+                    </div>
+                    <div class="order-field">
+                        <span class="order-field-label"> Size: </span> {{ item.size }}
+                    </div>
+                    <div class="order-field">
+                        <span class="order-field-label"> Table No: </span> {{ item.tableNo }}
+                    </div>
+                    <div class="order-field">
+                        <span class="order-field-label"> Timestamp: </span> {{ item.timestamp | date: 'medium' }}
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </div>

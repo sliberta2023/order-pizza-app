@@ -7,6 +7,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSelectModule } from "@angular/material/select";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
     exports: [
@@ -14,6 +15,7 @@ import { MatDialogModule } from "@angular/material/dialog";
         MatCardModule,
         MatDialogModule,
         MatFormFieldModule,
+        MatIconModule,
         MatInputModule,
         MatProgressSpinnerModule,
         MatSelectModule,

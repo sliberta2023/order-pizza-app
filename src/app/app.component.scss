@@ -7,10 +7,14 @@
 
 .header {
     display: flex;
-    justify-content: flex-end;
+    width: 100%;
     align-items: center;
     height: 10vh;
     border-bottom: 1px solid gainsboro;
+}
+
+app-header {
+    width: 100%;
 }
 
 .main {

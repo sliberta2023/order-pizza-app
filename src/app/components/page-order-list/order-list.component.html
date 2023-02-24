@@ -42,5 +42,12 @@
                 </mat-card-content>
             </mat-card>
         </div>
+        <div *ngIf="!filteredItems || filteredItems.length === 0" class="search-result-empty">
+            <mat-card>
+                <mat-card-content>
+                    No orders found matching your search.
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </div>

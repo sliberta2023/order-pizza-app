@@ -1,9 +1,14 @@
 <div class="container">
-    <button
-        *ngIf="isLogoutButtonVisible$ | async"
-        mat-raised-button
-        color="primary"
-        (click)="onClick()">
-            Logout
-    </button>
+    <div class="logo">
+        <img src="/assets/images/pizza.jpg" href="" alt="pizza" width="60px" height="60px">
+    </div>
+    <div class="header-actions">
+        <button
+            *ngIf="isLogoutButtonVisible$ | async"
+            mat-raised-button
+            color="primary"
+            (click)="onClick()">
+                Logout
+        </button>
+    </div>
 </div>

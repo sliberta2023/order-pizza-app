@@ -27,7 +27,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-## Assumptions
-1. Since the pizza order options are limited, it makes sense to implement filter instead of text search.
+## How to run the app in the docker environment
+1. Make sure you are at the root directory of your application, and run the following to create the docker image
+```
+    docker build -t order-pizza-app-image:latest .
+```
 
-2. 
+2. Make sure your image created successfully.
+```
+    docker image ls
+```
+
+3. Run the docker image of your app. The app will run at localhost:8080
+```
+    docker run -d -p 8080:80 order-pizza-app:latest
+```
+
+4. Check the running container
+```
+    docker ps
+```

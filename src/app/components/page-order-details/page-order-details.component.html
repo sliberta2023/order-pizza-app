@@ -1,1 +1,30 @@
-<p>page-order-details works!</p>
+<div class="container">
+    <mat-card *ngIf="orderItem">
+        <mat-card-title> {{ 'Order Id: ' + orderItem.orderId }} </mat-card-title>
+        <mat-card-content>
+            <div class="order-field">
+                <span class="order-field-label"> Crust: </span> {{ orderItem.crust }}
+            </div>
+            <div class="order-field">
+                <span class="order-field-label"> Flavor: </span> {{ orderItem.flavor }}
+            </div>
+            <div class="order-field">
+                <span class="order-field-label"> Size: </span> {{ orderItem.size }}
+            </div>
+            <div class="order-field">
+                <span class="order-field-label"> Table No: </span> {{ orderItem.tableNo }}
+            </div>
+            <div class="order-field">
+                <span class="order-field-label"> Timestamp: </span> {{ orderItem.timestamp | date: 'medium' }}
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="onDelete(orderItem.orderId)">
+                    Delete
+                </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -6,11 +6,12 @@ import { SharedComponentsModule } from './components/components.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { OrderService } from './services/order.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { SharedService } from './services/shared.service';
+import { HeaderInterceptor } from './services/http-intercept.service';
 
 export function getToken() {
   console.log("Inside getToken...");
@@ -34,7 +35,17 @@ export function getToken() {
     }),
     SharedComponentsModule
   ],
-  providers: [AuthGuardService, AuthService, OrderService, SharedService],
+  providers: [
+    AuthGuardService,
+    AuthService,
+    OrderService,
+    SharedService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

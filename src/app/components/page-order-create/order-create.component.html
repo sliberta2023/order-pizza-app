@@ -1,1 +1,81 @@
-<p>order-create works!</p>
+<div class="container">
+    <h4 class="form-title"> Create An Order </h4>
+    <div class="form-content">
+        <mat-card>
+            <mat-card-header>
+                <mat-error *ngIf="hasUIError" class="card-error">
+                    Please enter valid inputs.
+                </mat-error>
+                <mat-error *ngIf="hasApiError" class="card-error">
+                    Something goes wrong in creating your order.
+                </mat-error>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="form-create" [formGroup]="formGroup">
+                    <div class="form-fields">
+                        <mat-form-field class="form-field" appearance="fill">
+                            <mat-label>Crust: </mat-label>
+                            <mat-select [formControl]="formControlCrust" name="food">
+                            <mat-option *ngFor="let crust of crusts" [value]="crust.value">
+                                {{ crust.viewValue }}
+                            </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="formControlCrust.hasError('required')">
+                            Please select a value.
+                            </mat-error>
+                        </mat-form-field>
+    
+                        <mat-form-field class="form-field" appearance="fill">
+                            <mat-label>Flavor: </mat-label>
+                            <mat-select [formControl]="formControlFlavor" name="food">
+                            <mat-option *ngFor="let flavor of flavors" [value]="flavor.value">
+                                {{ flavor.viewValue }}
+                            </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="formControlFlavor.hasError('required')">
+                            Please select a value.
+                            </mat-error>
+                        </mat-form-field>
+    
+                        <mat-form-field class="form-field" appearance="fill">
+                            <mat-label>Size: </mat-label>
+                            <mat-select [formControl]="formControlSize" name="food">
+                            <mat-option *ngFor="let size of sizes" [value]="size.value">
+                                {{ size.viewValue }}
+                            </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="formControlSize.hasError('required')">
+                            Please select a value.
+                            </mat-error>
+                        </mat-form-field>
+    
+                        <mat-form-field class="form-field" appearance="fill">
+                            <mat-label>Table No: </mat-label>
+                            <input type="number" matInput placeholder="1" [formControl]="formControlTableNo">
+                            <mat-error *ngIf="formControlTableNo.hasError('min') || formControlTableNo.hasError('max')">
+                                Valid table numbers range from {{TABLE_NO_MIN}} to {{TABLE_NO_MAX}}
+                            </mat-error>
+                        </mat-form-field>  
+                        
+                    </div>
+                </form>
+                
+                </mat-card-content>
+                <mat-card-actions>
+                    <div class="actions">
+                        <button
+                            *ngIf="!isInProgress"
+                            class="button-create"
+                            mat-raised-button
+                            color="primary"
+                            (click)="onOrderCreate()">
+                            Submit Order
+                        </button>
+            
+                        <mat-spinner *ngIf="isInProgress"></mat-spinner>
+            
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+    </div>
+</div>

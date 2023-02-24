@@ -17,7 +17,7 @@ export interface OrderAPIResponse {
 export interface OrderUI {
     crust: string;
     flavor: string;
-    orderId: string;
+    orderId: number;
     size: string;
     tableNo: number;
     timestamp: string;

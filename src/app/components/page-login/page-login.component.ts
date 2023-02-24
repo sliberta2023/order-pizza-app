@@ -18,7 +18,7 @@ export class PageLogin implements OnInit, OnDestroy {
   isChecking = false;
   hasError = false; 
 
-  private ngUnsubscribe = new Subject();
+  private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
 
   constructor(
     private readonly authService: AuthService,
@@ -34,7 +34,8 @@ export class PageLogin implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-      this.ngUnsubscribe.complete();
+    this.ngUnsubscribe.next(true);
+      this.ngUnsubscribe.unsubscribe();
   }
 
   onLogin() {

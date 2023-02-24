@@ -8,6 +8,8 @@ import { CommonModule } from "@angular/common";
 import { SharedMaterialsModule } from "../materials.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { PageOrderDetails } from './page-order-details/page-order-details.component';
+import { DialogOrderSubmitComponent } from './dialog-order-submit/dialog-order-submit.component';
+import { DialogOrderDeleteComponent } from './dialog-order-delete/dialog-order-delete.component';
 
 const components = [
     FooterComponent,
@@ -20,7 +22,9 @@ const components = [
 
 @NgModule({
   declarations: [
-    ...components
+    ...components,
+    DialogOrderSubmitComponent,
+    DialogOrderDeleteComponent
   ],
   imports: [
     CommonModule,

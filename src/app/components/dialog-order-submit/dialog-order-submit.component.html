@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 mat-dialog-title> Order Created Successfully. </h1>
+    <div mat-dialog-content>
+        <mat-card>
+            <mat-card-content>
+                <div class="order-field">
+                    <span class="order-field-label"> Order Id: </span> {{ orderItem.orderId }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Crust: </span> {{ orderItem.crust }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Flavor: </span> {{ orderItem.flavor }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Size: </span> {{ orderItem.size }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Table No: </span> {{ orderItem.tableNo }}
+                </div>
+                <div class="order-field">
+                    <span class="order-field-label"> Timestamp: </span> {{ orderItem.timestamp | date: 'medium' }}
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+
+    <div mat-dialog-actions>
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="onClickToListPage()"
+            [mat-dialog-close]="false"
+            cdkFocusInitial
+            >
+                Goto List Page
+        </button>
+    </div>
+</div>

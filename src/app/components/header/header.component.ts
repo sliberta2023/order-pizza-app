@@ -29,4 +29,8 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('token');
   }
 
+  onCreateOrder(): void {
+    this.router.navigate(['create']);
+  }
+
 }

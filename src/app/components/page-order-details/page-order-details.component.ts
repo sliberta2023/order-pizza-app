@@ -56,4 +56,8 @@ export class PageOrderDetails implements OnInit, OnDestroy {
     });
   }
 
+  onClickToListPage(): void {
+    this.router.navigate(['list']);
+  }
+
 }

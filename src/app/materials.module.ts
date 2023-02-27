@@ -8,6 +8,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSelectModule } from "@angular/material/select";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatIconModule } from "@angular/material/icon";
+import { MatToolbarModule } from "@angular/material/toolbar";
 
 @NgModule({
     exports: [
@@ -19,7 +20,8 @@ import { MatIconModule } from "@angular/material/icon";
         MatInputModule,
         MatProgressSpinnerModule,
         MatSelectModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatToolbarModule
     ]
 })
 export class SharedMaterialsModule {}

@@ -1,14 +1,23 @@
 <div class="container">
-    <div class="logo">
-        <img src="/assets/images/pizza.jpg" href="" alt="pizza" width="60px" height="60px">
-    </div>
-    <div class="header-actions">
-        <button
-            *ngIf="isLogoutButtonVisible$ | async"
-            mat-raised-button
-            color="primary"
-            (click)="onClick()">
-                Logout
+    <mat-toolbar>
+        <button mat-icon-button class="menu-order-pizza" aria-label="toolbar-order-pizza">
+            <mat-icon>menu</mat-icon>
         </button>
-    </div>
+        <span class="toolbar-spacer"></span>
+        <div class="header-actions" *ngIf="isLogoutButtonVisible$ | async">
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="onCreateOrder()">
+                Create Order
+            </button>
+
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="onClick()">
+                    Logout
+            </button>
+        </div>
+    </mat-toolbar>
 </div>

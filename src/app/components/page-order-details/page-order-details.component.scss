@@ -13,3 +13,11 @@
     font-weight: bold;
     padding-right: 1rem;
 }
+
+.mat-card-actions {
+    display: flex;
+}
+
+.button-spacer {
+    flex: 1 1 auto;
+}

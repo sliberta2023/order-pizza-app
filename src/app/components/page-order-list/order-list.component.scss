@@ -4,7 +4,7 @@
 
 .order-list-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin: 0.5rem 2rem;
 }
 
@@ -44,6 +44,8 @@
     padding-right: 1rem;
 }
 
-.mat-form-field-appearance-fill .mat-form-field-flex {
-    padding: 0 !important;
+.search-result-empty {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

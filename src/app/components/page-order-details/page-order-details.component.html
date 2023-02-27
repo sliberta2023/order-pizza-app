@@ -22,6 +22,16 @@
             <button
                 mat-raised-button
                 color="primary"
+                (click)="onClickToListPage()"
+                [mat-dialog-close]="false"
+                cdkFocusInitial
+                >
+                    Goto List Page
+            </button>
+            <span class="button-spacer"></span>
+            <button
+                mat-raised-button
+                color="warn"
                 (click)="onDelete(orderItem.orderId)">
                     Delete
                 </button>

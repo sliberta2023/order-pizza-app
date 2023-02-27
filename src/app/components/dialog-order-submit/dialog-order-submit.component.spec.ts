@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SharedMaterialsModule } from 'src/app/materials.module';
 
 import { DialogOrderSubmitComponent } from './dialog-order-submit.component';
 
@@ -8,7 +10,11 @@ describe('DialogOrderSubmitComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogOrderSubmitComponent ]
+      imports: [SharedMaterialsModule],
+      declarations: [ DialogOrderSubmitComponent ],
+      providers: [
+        {provide: MAT_DIALOG_DATA, useValue: {data: {}}}
+      ]
     })
     .compileComponents();
 

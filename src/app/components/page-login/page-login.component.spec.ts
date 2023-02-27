@@ -1,18 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppModule } from 'src/app/app.module';
 
-import { PageLoginComponent } from './page-login.component';
+import { PageLogin } from './page-login.component';
 
-describe('PageLoginComponent', () => {
-  let component: PageLoginComponent;
-  let fixture: ComponentFixture<PageLoginComponent>;
+describe('PageLogin', () => {
+  let component: PageLogin;
+  let fixture: ComponentFixture<PageLogin>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageLoginComponent ]
+      imports: [
+        RouterTestingModule,
+        AppModule
+      ],
+      declarations: [ PageLogin ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PageLoginComponent);
+    fixture = TestBed.createComponent(PageLogin);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

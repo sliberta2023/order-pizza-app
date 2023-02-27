@@ -40,7 +40,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 3. Run the docker image of your app. The app will run at localhost:8080
 ```
-    docker run -d -p 8080:80 order-pizza-app:latest
+    docker run -d -p 8080:80 order-pizza-app-image:latest
 ```
 
 4. Check the running container
